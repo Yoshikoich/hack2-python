@@ -13,11 +13,13 @@ def fn_hack_8(s):
     result = []
     length = len(s)
     
-    # Manejar el caso cuando hay más de un elemento
-    if length > 1:
+    # Si la longitud de la lista es impar
+    if length % 2 != 0:
+        for i in range(length):
+            result.append(f"{s[length - 1 - i]}-{length - i}")
+    else:
+        # Si la longitud es par, devolver solo los índices en formato de cadena
         for i in range(length):
             result.append(str(length - i))
-    else:
-        result.append(str(length))
-
+    
     return result
