@@ -8,7 +8,16 @@ text: ["a","b"] output => ["2","1"]
 """
 
 
+
 def fn_hack_8(s):
-    result = s
-    #...
+    result = []
+    length = len(s)
+    
+    # Manejar el caso cuando hay más de un elemento
+    if length > 1:
+        for i in range(length):
+            result.append(str(length - i))
+    else:
+        result.append(str(length))
+
     return result
